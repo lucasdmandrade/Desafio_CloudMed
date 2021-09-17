@@ -40,3 +40,12 @@
 .livro p{
     margin-top: -15px;
 }
+.livro button{
+    max-width: 100%;
+    height: 100%;
+    border: none;
+}
+.livro img{
+    width: 100%;
+    height: 100%;
+}
