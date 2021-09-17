@@ -1,0 +1,52 @@
+.global{
+    height: 180vh;
+    display: flex;
+}
+
+.autor {
+    height: 100%;
+    background-color: rgb(58, 45, 45);
+    width: 20%;
+    color: white;
+   }
+
+.autor img{
+    margin: 0px 10px 10px 0;
+    width: 100%;
+   }
+
+.center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stars{
+    display: flex;
+    justify-content: center;
+}
+
+.stars img{
+    filter: invert(100%);
+    max-width: 5%;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+ 
+.icones{
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+}
+
+.icone{
+    filter: invert(100%) ;
+    width: 5%;
+}
+.minhalista{
+    display: flex;
+    justify-content: center;
+}
