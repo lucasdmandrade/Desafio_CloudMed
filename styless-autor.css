@@ -42,7 +42,7 @@
 .buttons{
     display: flex;
     justify-content: space-between;
-    max-width: 75%%;
+    max-width: 75%;
 }
 .teste{
    margin-right: 15px
