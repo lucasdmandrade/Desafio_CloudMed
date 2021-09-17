@@ -11,12 +11,27 @@
 
     margin-top: -8px;
     margin-left: -8px;
+    
    }
 
 .autor img{
     margin: 0px 10px 10px 0;
     width: 100%;
    }
+.autor p{
+    margin-left: 15px;
+}
+.autor h2{
+    margin-left: 15px;
+}
+.autor button{
+    border-radius: 20px;
+
+    
+    border-color: white;
+    color: white;
+    background-color: rgb(58, 45, 45);
+}
 
 .center{
     display: flex;
@@ -39,10 +54,11 @@
     max-width: 5%;
 }
 
-.buttons{
+.buttons {
     display: flex;
     justify-content: space-between;
     max-width: 75%;
+
 }
 .teste{
    margin-right: 15px
@@ -52,6 +68,7 @@
     display: flex;
     justify-content: center;
     height: 20vh;
+    margin-left: 8px;
 }
 
 .icone{
