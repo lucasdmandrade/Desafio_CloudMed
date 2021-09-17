@@ -1,12 +1,25 @@
-let livros = []
-livros[3] = {
-    titulo: 'Fumaça e espelhos',
-    ano: '1998',
-    nota: 4.2,
-    qntAvaliacoes: 1500,
-    estilo: ['Contos', 'Ficção'],
-    resenha: ''
+function listagemLivros(){
+    let livros = []
+livros[0] = []
+livros[1] = []
+livros[2] = []
+livros[3] = ['Fumaça e espelhos', 1998, 4.2, 1500,['Contos', 'Ficção'],'']
+
+    console.log(livros[3][0])
+    const divPronta = `
+    <div id="livro" class="livro">
+        <button onclick=""> <img src="imagens/neve vidro e maçãs - 2019.png" /> </button>
+        <h3>${livros[3][0]}</h3>
+        <p>${livros[3][1]}</p>
+    </div>
+`
+console.log(divPronta)
+    const livro = document.querySelector(' .livro')
+    console.log(livro)
+    livro.innerHTML = divPronta
+    console.log('teste')
 }
+listagemLivros()
 
 //Função paginação livros
 function pagination(livros){
