@@ -1,0 +1,38 @@
+.detalhes{
+    margin-left: 30px;
+}
+
+header{
+    display: flex;
+    align-items: center;
+}
+.retorno{
+    height: 8vh;
+}
+
+.logo {
+    margin: 0px 10px 10px 30px;
+    width: 15%;
+}
+.areaavaliacao{
+    display: flex;
+}
+.quadradonota{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+    width: 6%;
+    height: 10vh;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+}
+
+.avaliacao{
+    margin-left: 8px;
+}
+.avaliacao p{
+    font-weight: bold;
+}

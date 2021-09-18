@@ -11,22 +11,14 @@
 
 .listalivros{
     display: flex;
-    max-width: 100%;
-    
-}
-.listalivros button img{
-    margin: 0px 10px 10px 0;
-    max-width: 80%;
-    max-height: 100%;
+    align-items:baseline;
 }
 
 .listalivros2{
     display: flex;
-    max-width: 50%;
-    
+    align-items:baseline;
 }
 .listalivros2 button img{
-    margin: 0px 10px 10px 0;
     max-width: 80%;
     max-height: 100%;
 }
@@ -36,16 +28,26 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    width: 25vh;
+    margin: 8px;
 }
-.livro p{
-    margin-top: -15px;
-}
-.livro button{
-    max-width: 100%;
-    height: 100%;
-    border: none;
-}
+
 .livro img{
     width: 100%;
-    height: 100%;
+    height: 45vh
+}
+.livro h3{
+    display:flex;
+    text-align: center;
+
+}
+
+.livro p{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -15px;
+
+    text-justify: center;
 }
