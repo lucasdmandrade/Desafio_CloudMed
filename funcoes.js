@@ -79,18 +79,42 @@ function pagination(livros) {
 function selecaoLivro(i){
     let livros = []
     livros[0] = ['Neve vidro e maçãs', 2019, 4.2, 1500, 'Contos - Ficção', '', '"imagens/neve vidro e maçãs - 2019.png"']
-    livros[1] = ['Mitologia Nórodica', 2017, 4.2, 1500, 'Contos - Ficção', '', '"imagens/mitologia nordica  - 2017.png"']
-    livros[2] = ['Criaturas estranas', 2013, 4.2, 1500, 'Contos - Ficção', '', '"imagens/Criaturas estranhas - 2013.png"']
-    livros[3] = ['Fumaça e espelhos', 1998, 4.2, 1500, 'Contos - Ficção', '', '"imagens/Fumaça e espelhos - 1999.png"']
-    livros[4] = ['Sandman - Fim dos mundos', 1994, 4.2, 1500, 'Contos - Ficção', '', '"imagens/Sandman - Fim dos Mundos 1994.png"']
-    livros[5] = ['Lugar nenhum', 1996, 4.2, 1500, 'Contos - Ficção', '', '"imagens/Lugar nenhum - 1996.png"']
-    livros[6] = ['Livro do cemitério', 2008, 4.2, 1500, 'Contos - Ficção', '', '"imagens/o livro do cemitério - 2008.png"']
-    livros[7] = ['Sandman Versão Definitiva (volume 1)', 1996, 4.2, 1500, 'Contos - Ficção', '', '"imagens/Sandman Versão Definitiva (volume 1) - 2006.png"']
-    livros[8] = ['Coraline', 2002, 4.2, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
-    livros[9] = ['Coraline', 2002, 4.2, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
-    livros[10] = ['Coraline', 2002, 4.2, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
-    livros[11] = ['Coraline', 2002, 4.2, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
+    livros[1] = ['Mitologia Nórodica', 2017, 3.7, 1500, 'Contos - Ficção', '', '"imagens/mitologia nordica  - 2017.png"']
+    livros[2] = ['Criaturas estranas', 2013, 5, 1500, 'Contos - Ficção', '', '"imagens/Criaturas estranhas - 2013.png"']
+    livros[3] = ['Fumaça e espelhos', 1998, 1.5, 1500, 'Contos - Ficção', '', '"imagens/Fumaça e espelhos - 1999.png"']
+    livros[4] = ['Sandman - Fim dos mundos', 1994, 3.1, 1500, 'Contos - Ficção', '', '"imagens/Sandman - Fim dos Mundos 1994.png"']
+    livros[5] = ['Lugar nenhum', 1996, 4.8, 1500, 'Contos - Ficção', '', '"imagens/Lugar nenhum - 1996.png"']
+    livros[6] = ['Livro do cemitério', 2008, 2.5, 1500, 'Contos - Ficção', '', '"imagens/o livro do cemitério - 2008.png"']
+    livros[7] = ['Sandman Versão Definitiva (volume 1)', 1996, 3.1, 1500, 'Contos - Ficção', '', '"imagens/Sandman Versão Definitiva (volume 1) - 2006.png"']
+    livros[8] = ['Coraline', 2002, 4, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
+    livros[9] = ['Coraline', 2002, 3, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
+    livros[10] = ['Coraline', 2002, 2, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
+    livros[11] = ['Coraline', 2002, 5, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
 
+    let qntEstrelas = ''
+    for(var j = 1; j < livros[i][2]; j ++){
+        console.log(j)
+        qntEstrelas += `
+        <img src="icones/star.svg" alt="icone de strela">
+        `
+        console.log(qntEstrelas)
+    }
+
+    if(livros[i][2] % 1 != 0){
+        if(livros[i][2] % 1 > 0.5){
+            qntEstrelas += `
+        <img src="icones/star.svg" alt="icone de strela">
+        `
+        }else{
+            qntEstrelas += `
+            <img src="icones/star-half-full.svg" alt="icone de strela quase cheia">
+            `
+            console.log(qntEstrelas)
+    }}else{
+        qntEstrelas += `
+        <img src="icones/star.svg" alt="icone de strela">
+        `
+    }
 
     let paginaCompleta = `
 
@@ -135,11 +159,7 @@ function selecaoLivro(i){
                         <div class="quadradonota">${livros[i][2]}</div>
                         <div class="avaliacao">
                             <div>
-                                <img src="icones/star.svg" alt="icone de strela">
-                                <img src="icones/star.svg" alt="icone de strela">
-                                <img src="icones/star.svg" alt="icone de strela">
-                                <img src="icones/star.svg" alt="icone de strela">
-                                <img src="icones/star-half-full.svg" alt="icone de strela quase cheia">
+                                ${qntEstrelas}
                             </div>
                             <p>
                             ${livros[i][3]} avaliações
