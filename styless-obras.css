@@ -58,3 +58,8 @@
 .livroTransition a:target{
     transform: scale(3);
 }
+.listagemLivros{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
