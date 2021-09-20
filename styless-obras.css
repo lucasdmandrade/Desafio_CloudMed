@@ -11,16 +11,7 @@
 
 .listalivros{
     display: flex;
-    align-items:baseline;
-}
-
-.listalivros2{
-    display: flex;
-    align-items:baseline;
-}
-.listalivros2 button img{
-    max-width: 80%;
-    max-height: 100%;
+    align-items:center;
 }
 
 .livro{
@@ -62,4 +53,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.listagemLivros button{
+    border: none;
+}
+.listagemLivros button:hover{
+    filter: brightness(85%);
+}
+.listagemLivros p{
+    margin: 5px;
 }

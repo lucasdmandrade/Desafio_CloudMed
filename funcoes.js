@@ -10,7 +10,7 @@ function listagemLivros(state) {
     livros[5] = ['Lugar nenhum', 1996, 4.2, 1500, ['Contos', 'Ficção'], '', '"imagens/Lugar nenhum - 1996.png"']
     livros[6] = ['Livro do cemitério', 2008, 4.2, 1500, ['Contos', 'Ficção'], '', '"imagens/o livro do cemitério - 2008.png"']
     livros[7] = ['Sandman Versão Definitiva (volume 1)', 1996, 4.2, 1500, ['Contos', 'Ficção'], '', '"imagens/Sandman Versão Definitiva (volume 1) - 2006.png"']
-    livros[8] = ['Coraline', 22002, 4.2, 1500, ['Contos', 'Ficção'], '', '"imagens/Coraline - 2002.png"']
+    livros[8] = ['Coraline', 2002, 4.2, 1500, ['Contos', 'Ficção'], '', '"imagens/Coraline - 2002.png"']
 
 
     //Criando vetor que armazenara a div responsavel pela listagem dos livros
@@ -91,8 +91,8 @@ function selecaoLivro(i) {
     livros[0] = ['Neve vidro e maçãs', 2019, 4.2, 1500, 'Contos - Ficção', '', '"imagens/neve vidro e maçãs - 2019.png"']
     livros[1] = ['Mitologia Nórodica', 2017, 3.7, 1500, 'Contos - Ficção', '', '"imagens/mitologia nordica  - 2017.png"']
     livros[2] = ['Criaturas estranas', 2013, 5, 1500, 'Contos - Ficção', '', '"imagens/Criaturas estranhas - 2013.png"']
-    livros[3] = ['Fumaça e espelhos', 1998, 1.5, 1500, 'Contos - Ficção', '', '"imagens/Fumaça e espelhos - 1999.png"']
-    livros[4] = ['Sandman - Fim dos mundos', 1994, 3.1, 1500, 'Contos - Ficção', '', '"imagens/Sandman - Fim dos Mundos 1994.png"']
+    livros[3] = ['Fumaça e espelhos', 1998, 1.5, 1500, 'Contos - Ficção', 'Fumaça e espelhos é uma coletânea de textos que Neil Gaiman escreveu nas décadas de 80 e 90. Na categoria de escritor ficcionista profissional, ele teve contos encomendados e publicados por diversas revistas e coletâneas, o que logo se nota pela diversidade de temas', '"imagens/Fumaça e espelhos - 1999.png"', 'Dos 31 contos (e poesias) que compõem Fumaça e espelhos, são poucos os que não surpreendem de cara pelas idéias. E os que não chamam atenção nas primeiras linhas geram várias surpresas posteriores, pois você nunca sabe se aquele jovem pacato é um lobisomem ou se o heróico narrador do conto é o assassino. Ou mesmo o assassinado.<br> <br> Fumaça e espelhos é uma coletânea de textos que Neil Gaiman escreveu nas décadas de 80 e 90. Na categoria de escritor ficcionista profissional, ele teve contos encomendados e publicados por diversas revistas e coletâneas, o que logo se nota pela diversidade de temas. Há desde a sua conhecida predileção por terror fantástico e magia até um conto erótico. Um elemento, porém, une todos os textos: seu vínculo com a tradição.']
+    livros[4] = ['Sandman - Fim dos mundos', 1994, 3.1, 1500, 'Contos - Ficção', 'Fumaça e espelhos é uma coletânea de textos que Neil Gaiman escreveu nas décadas de 80 e 90. Na categoria de escritor ficcionista profissional, ele teve contos encomendados e publicados por diversas revistas e coletâneas, o que logo se nota pela diversidade de temas.', '"imagens/Sandman - Fim dos Mundos 1994.png"']
     livros[5] = ['Lugar nenhum', 1996, 4.8, 1500, 'Contos - Ficção', '', '"imagens/Lugar nenhum - 1996.png"']
     livros[6] = ['Livro do cemitério', 2008, 2.5, 1500, 'Contos - Ficção', '', '"imagens/o livro do cemitério - 2008.png"']
     livros[7] = ['Sandman Versão Definitiva (volume 1)', 1996, 3.1, 1500, 'Contos - Ficção', '', '"imagens/Sandman Versão Definitiva (volume 1) - 2006.png"']
@@ -146,7 +146,7 @@ function selecaoLivro(i) {
                         <h3>${livros[i][1]}</h3>
                     </div>
                     <p>
-                        texto do livro
+                        ${livros[i][5]}
                     </p>
                     <h4>${livros[i][4]}</h4>
 
@@ -183,10 +183,10 @@ function selecaoLivro(i) {
                         </div>
                     </div>
 
-                    <div>
+                    <div class="resenha">
                         <h3>Resenha</h3>
                         <p>
-                            Resenha do livro
+                            ${livros[i][7]}
                         </p>
                     </div>
                 </div>

@@ -36,3 +36,6 @@ header{
 .avaliacao p{
     font-weight: bold;
 }
+.resenha{
+    max-width: 150vh;
+}
