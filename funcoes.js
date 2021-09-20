@@ -1,4 +1,6 @@
-function listagemLivros() {
+let state = 1
+
+function listagemLivros(state) {
     let livros = []
     livros[0] = ['Neve vidro e maçãs', 2019, 4.2, 1500, ['Contos', 'Ficção'], '', '"imagens/neve vidro e maçãs - 2019.png"']
     livros[1] = ['Mitologia Nórodica', 2017, 4.2, 1500, ['Contos', 'Ficção'], '', '"imagens/mitologia nordica  - 2017.png"']
@@ -9,18 +11,24 @@ function listagemLivros() {
     livros[6] = ['Livro do cemitério', 2008, 4.2, 1500, ['Contos', 'Ficção'], '', '"imagens/o livro do cemitério - 2008.png"']
     livros[7] = ['Sandman Versão Definitiva (volume 1)', 1996, 4.2, 1500, ['Contos', 'Ficção'], '', '"imagens/Sandman Versão Definitiva (volume 1) - 2006.png"']
     livros[8] = ['Coraline', 22002, 4.2, 1500, ['Contos', 'Ficção'], '', '"imagens/Coraline - 2002.png"']
-    
+
 
     //Criando vetor que armazenara a div responsavel pela listagem dos livros
-    let divPronta = '<div id="listalivros" class="listalivros">'
+    let divPronta = '<div id="state" class="listalivros">'
 
-    // Loop para crir divs para cada livro
-    for (var i = 0; i < 6; i++) {
-        console.log(livros[i])
-        //Só cria a div para o livro caso exista informação pra ser inserida(Se tem mais livros)
-        if(livros[i] != null){
-            //href para inserir id da imagem q quero aumentar na url 
-            divPronta += `
+    //Teste se existem livros pra carregar a proxima pagina
+    if ((state - 1) * 6 > livros.length) {
+        window.alert('Impossivel(err: não há mais livros)')
+    } else {
+
+        // Loop para crir divs para cada livro
+        //Usando state para paginação 
+        for (var i = (state - 1) * 6; i < 6 * state; i++) {
+            console.log(livros[i])
+            //Só cria a div para o livro caso exista informação pra ser inserida(Se tem mais livros)
+            if (livros[i] != null) {
+                //href para inserir id da imagem q quero aumentar na url 
+                divPronta += `
             <div class="livro livroTransition">
                 <a id=${i} href="#${i}" onClick="selecaoLivro(this.id)">
                     <img src=${livros[i][6]} /> 
@@ -28,35 +36,35 @@ function listagemLivros() {
                 <h3>${livros[i][0]}</h3>
                 <p>${livros[i][1]}</p>
             </div>
-            `} 
-    } divPronta += `</div>
+            `}
+        } divPronta += `</div>
     <div class="listalivros2">
     `
 
-    //Criar div para "Segunda estante" de livros da pagina
-    for (var i = 6; i < 12; i++) {
-        console.log(livros[i])
-        if(livros[i] != null){
-            //href para inserir id da imagem q quero aumentar na url 
-            divPronta += `
-            <div class="livro livroTransition">
-                <a id=${i} href="#${i}" onClick="selecaoLivro(this.id)">
-                    <img src=${livros[i][6]} /> 
-                </a>
-                <h3>${livros[i][0]}</h3>
-                <p>${livros[i][1]}</p>
-            </div>
-            `} 
-    } divPronta += `</div>`
+        //Inserindo div fechamento e botões paginação 
+        divPronta += `</div>
+    <div class="listagemLivros">
+                    <button id="${state}" onclick="antPagina(this.id)">
+                        <img src="icones/chevron-left.svg" alt="Voltar lista">
+                    </button>
+                    <div class="numeroPag">
+                        <p>${state}</p>
+                    </div>
+                    <button id="${state}" onclick="proxPagina(this.id)">
+                        <img src="icones/chevron-right-circle.svg" alt="Voltar lista">
+                    </button>
+                </div>
+    `
 
 
-    //Visualização da div
-    console.log(divPronta)
-    //Puxando do html a div da listagem
-    const listacompleta = document.querySelector(' .listacompleta')
-    console.log(listacompleta)
-    //Retornando a div com as infos
-    listacompleta.innerHTML = divPronta
+        //Visualização da div
+        console.log(divPronta)
+        //Puxando do html a div da listagem
+        const listacompleta = document.querySelector(' .listacompleta')
+        console.log(listacompleta)
+        //Retornando a div com as infos
+        listacompleta.innerHTML = divPronta
+    }
 }
 
 
@@ -78,7 +86,7 @@ function pagination(livros) {
     // (pagina - 1) * 10 e receber o vetor auto incrementando ate 9
 }
 
-function selecaoLivro(i){
+function selecaoLivro(i) {
     let livros = []
     livros[0] = ['Neve vidro e maçãs', 2019, 4.2, 1500, 'Contos - Ficção', '', '"imagens/neve vidro e maçãs - 2019.png"']
     livros[1] = ['Mitologia Nórodica', 2017, 3.7, 1500, 'Contos - Ficção', '', '"imagens/mitologia nordica  - 2017.png"']
@@ -89,14 +97,11 @@ function selecaoLivro(i){
     livros[6] = ['Livro do cemitério', 2008, 2.5, 1500, 'Contos - Ficção', '', '"imagens/o livro do cemitério - 2008.png"']
     livros[7] = ['Sandman Versão Definitiva (volume 1)', 1996, 3.1, 1500, 'Contos - Ficção', '', '"imagens/Sandman Versão Definitiva (volume 1) - 2006.png"']
     livros[8] = ['Coraline', 2002, 4, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
-    livros[9] = ['Coraline', 2002, 3, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
-    livros[10] = ['Coraline', 2002, 2, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
-    livros[11] = ['Coraline', 2002, 5, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
 
     //Contador para quantas estrelas o livro recebeu
     let qntEstrelas = ''
     //Quantas estrelas inteiras o livro tem 
-    for(var j = 1; j < livros[i][2]; j ++){
+    for (var j = 1; j < livros[i][2]; j++) {
         console.log(j)
         qntEstrelas += `
         <img src="icones/star.svg" alt="icone de strela">
@@ -105,19 +110,20 @@ function selecaoLivro(i){
     }
 
     //Se a nota do livro tiver parte decimal...
-    if(livros[i][2] % 1 != 0){
+    if (livros[i][2] % 1 != 0) {
         //Se a parte decimal for maior do que 0,5 arredonda pra cima
-        if(livros[i][2] % 1 > 0.5){
+        if (livros[i][2] % 1 > 0.5) {
             qntEstrelas += `
         <img src="icones/star.svg" alt="icone de strela">
         `
-        //Se não o livro ganha meia estrela
-        }else{
+            //Se não o livro ganha meia estrela
+        } else {
             qntEstrelas += `
             <img src="icones/star-half-full.svg" alt="icone de strela quase cheia">
             `
             console.log(qntEstrelas)
-    }}else{
+        }
+    } else {
         //Atribuindo a estrela "extra"(Por ter arredondado o valor para cima)
         qntEstrelas += `
         <img src="icones/star.svg" alt="icone de strela">
@@ -189,21 +195,42 @@ function selecaoLivro(i){
     </div>
     <script type="text/javascript" src="funcoes.js"></script>
     </script>
+
+    
     `
     //Esperando transição de tela
-    setTimeout(function(){
+    setTimeout(function () {
         //Chamando função reponsavel pela atualização dos dados da pagina 
         criarPagina(paginaCompleta)
-    },1000);
-    
+    }, 1000);
+
 }
 
 //Função para atualizar os dados da pagina
-function criarPagina(paginaMontada){
+function criarPagina(paginaMontada) {
     //Puxando a root para alterar a pagina por completo
     const root = document.querySelector('.root')
     //Inserindo pagina refatorada
     root.innerHTML = paginaMontada
 }
-//Para criar a pagina chamar outra função para fazer isso 
-//E passar como parametro o return dessa
+
+//Função para mudar pagina livro
+function proxPagina(state) {
+    state++
+    console.log(state)
+
+    listagemLivros(state)
+}
+
+function antPagina(state) {
+    if (state > 1) {
+        state = state - 1
+    } else {
+        window.alert('Não há pagina anteriorior')
+    }
+    console.log(state)
+
+    listagemLivros(state)
+
+    return state
+}
