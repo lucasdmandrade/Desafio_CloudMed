@@ -19,15 +19,16 @@ function listagemLivros() {
         console.log(livros[i])
         //Só cria a div para o livro caso exista informação pra ser inserida(Se tem mais livros)
         if(livros[i] != null){
+            //href para inserir id da imagem q quero aumentar na url 
             divPronta += `
-            <div class="livro">
-                <a id=${i}  onClick="selecaoLivro(this.id)">
+            <div class="livro livroTransition">
+                <a id=${i} href="#${i}" onClick="selecaoLivro(this.id)">
                     <img src=${livros[i][6]} /> 
                 </a>
                 <h3>${livros[i][0]}</h3>
                 <p>${livros[i][1]}</p>
             </div>
-            `}
+            `} 
     } divPronta += `</div>
     <div class="listalivros2">
     `
@@ -36,9 +37,10 @@ function listagemLivros() {
     for (var i = 6; i < 12; i++) {
         console.log(livros[i])
         if(livros[i] != null){
+            //href para inserir id da imagem q quero aumentar na url 
             divPronta += `
-            <div class="livro">
-                <a id=${i}  onClick="selecaoLivro(this.id)">
+            <div class="livro livroTransition">
+                <a id=${i} href="#${i}" onClick="selecaoLivro(this.id)">
                     <img src=${livros[i][6]} /> 
                 </a>
                 <h3>${livros[i][0]}</h3>
@@ -91,7 +93,9 @@ function selecaoLivro(i){
     livros[10] = ['Coraline', 2002, 2, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
     livros[11] = ['Coraline', 2002, 5, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
 
+    //Contador para quantas estrelas o livro recebeu
     let qntEstrelas = ''
+    //Quantas estrelas inteiras o livro tem 
     for(var j = 1; j < livros[i][2]; j ++){
         console.log(j)
         qntEstrelas += `
@@ -100,22 +104,28 @@ function selecaoLivro(i){
         console.log(qntEstrelas)
     }
 
+    //Se a nota do livro tiver parte decimal...
     if(livros[i][2] % 1 != 0){
+        //Se a parte decimal for maior do que 0,5 arredonda pra cima
         if(livros[i][2] % 1 > 0.5){
             qntEstrelas += `
         <img src="icones/star.svg" alt="icone de strela">
         `
+        //Se não o livro ganha meia estrela
         }else{
             qntEstrelas += `
             <img src="icones/star-half-full.svg" alt="icone de strela quase cheia">
             `
             console.log(qntEstrelas)
     }}else{
+        //Atribuindo a estrela "extra"(Por ter arredondado o valor para cima)
         qntEstrelas += `
         <img src="icones/star.svg" alt="icone de strela">
         `
     }
 
+    //Pagina do livro pra detalhes
+    //Não troca de pagina para entrar em detalher a pagina apenas alteras suas infos
     let paginaCompleta = `
 
     <div class="root">
@@ -180,9 +190,15 @@ function selecaoLivro(i){
     <script type="text/javascript" src="funcoes.js"></script>
     </script>
     `
-    criarPagina(paginaCompleta)
+    //Esperando transição de tela
+    setTimeout(function(){
+        //Chamando função reponsavel pela atualização dos dados da pagina 
+        criarPagina(paginaCompleta)
+    },1000);
+    
 }
 
+//Função para atualizar os dados da pagina
 function criarPagina(paginaMontada){
     //Puxando a root para alterar a pagina por completo
     const root = document.querySelector('.root')

@@ -51,3 +51,10 @@
 
     text-justify: center;
 }
+
+.livroTransition a{
+    transition: transform 2s;
+}
+.livroTransition a:target{
+    transform: scale(3);
+}
