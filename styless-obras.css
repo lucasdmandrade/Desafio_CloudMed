@@ -70,3 +70,19 @@
 .listagemLivros p{
     margin: 5px;
 }
+
+.numeroPag {
+    display: flex;
+    align-items: center;
+}
+.numeroPag hr{
+    margin: -8px;
+    width: 20px;
+    height: 1.8px;
+    background-color: black;
+    border: none;
+}
+.paginaAtual{
+    font-weight: bold;
+    width: 15px;
+}

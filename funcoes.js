@@ -1,16 +1,33 @@
-let textoCompleto="Hoje vive perto de Minneapolis, nos Estados Unidos. Descobriu seu amor pelos livros na infância e devorava as histórias de C.S. Lewis, J.R.R. Tolkien, James Branch Cabell e Edgar Alan Poe, entre outros autores. Começou a carreira como jornalista, mas logo o talento para construir tramas e universos únicos o levou para o mundo dos quadrinhos, com a aclamada série Sandman, e depois para a ficção adulta e infantojuvenil. Suas obras receberam inúmeros prêmios e medalhas e foram adaptadas em bem-sucedidas versões para cinema, televisão e até ópera."
+let textoCompleto = "Hoje vive perto de Minneapolis, nos Estados Unidos. Descobriu seu amor pelos livros na infância e devorava as histórias de C.S. Lewis, J.R.R. Tolkien, James Branch Cabell e Edgar Alan Poe, entre outros autores. Começou a carreira como jornalista, mas logo o talento para construir tramas e universos únicos o levou para o mundo dos quadrinhos, com a aclamada série Sandman, e depois para a ficção adulta e infantojuvenil. Suas obras receberam inúmeros prêmios e medalhas e foram adaptadas em bem-sucedidas versões para cinema, televisão e até ópera."
 let state = 1
 let minhaLista = [1, 5]
 let livros = []
-    livros[0] = ['Neve vidro e maçãs', 2019, 4.2, 1500, 'Contos - Ficção', '', '"imagens/neve vidro e maçãs - 2019.png"']
-    livros[1] = ['Mitologia Nórodica', 2017, 3.7, 1500, 'Contos - Ficção', '', '"imagens/mitologia nordica  - 2017.png"']
-    livros[2] = ['Criaturas estranas', 2013, 5, 1500, 'Contos - Ficção', '', '"imagens/Criaturas estranhas - 2013.png"']
-    livros[3] = ['Fumaça e espelhos', 1998, 1.5, 1500, 'Contos - Ficção', 'Fumaça e espelhos é uma coletânea de textos que Neil Gaiman escreveu nas décadas de 80 e 90. Na categoria de escritor ficcionista profissional, ele teve contos encomendados e publicados por diversas revistas e coletâneas, o que logo se nota pela diversidade de temas', '"imagens/Fumaça e espelhos - 1999.png"', 'Dos 31 contos (e poesias) que compõem Fumaça e espelhos, são poucos os que não surpreendem de cara pelas idéias. E os que não chamam atenção nas primeiras linhas geram várias surpresas posteriores, pois você nunca sabe se aquele jovem pacato é um lobisomem ou se o heróico narrador do conto é o assassino. Ou mesmo o assassinado.<br> <br> Fumaça e espelhos é uma coletânea de textos que Neil Gaiman escreveu nas décadas de 80 e 90. Na categoria de escritor ficcionista profissional, ele teve contos encomendados e publicados por diversas revistas e coletâneas, o que logo se nota pela diversidade de temas. Há desde a sua conhecida predileção por terror fantástico e magia até um conto erótico. Um elemento, porém, une todos os textos: seu vínculo com a tradição.']
-    livros[4] = ['Sandman - Fim dos mundos', 1994, 3.1, 1500, 'Contos - Ficção', '', '"imagens/Sandman - Fim dos Mundos 1994.png"']
-    livros[5] = ['Lugar nenhum', 1996, 4.8, 1500, 'Contos - Ficção', '', '"imagens/Lugar nenhum - 1996.png"']
-    livros[6] = ['Livro do cemitério', 2008, 2.5, 1500, 'Contos - Ficção', '', '"imagens/o livro do cemitério - 2008.png"']
-    livros[7] = ['Sandman Versão Definitiva (volume 1)', 1996, 3.1, 1500, 'Contos - Ficção', '', '"imagens/Sandman Versão Definitiva (volume 1) - 2006.png"']
-    livros[8] = ['Coraline', 2002, 4, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
+livros[0] = ['Neve vidro e maçãs', 2019, 4.2, 1500, 'Contos - Ficção', '', '"imagens/neve vidro e maçãs - 2019.png"']
+livros[1] = ['Mitologia Nórodica', 2017, 3.7, 1500, 'Contos - Ficção', '', '"imagens/mitologia nordica  - 2017.png"']
+livros[2] = ['Criaturas estranas', 2013, 5, 1500, 'Contos - Ficção', '', '"imagens/Criaturas estranhas - 2013.png"']
+livros[3] = ['Fumaça e espelhos', 1998, 1.5, 1500, 'Contos - Ficção', 'Fumaça e espelhos é uma coletânea de textos que Neil Gaiman escreveu nas décadas de 80 e 90. Na categoria de escritor ficcionista profissional, ele teve contos encomendados e publicados por diversas revistas e coletâneas, o que logo se nota pela diversidade de temas', '"imagens/Fumaça e espelhos - 1999.png"', 'Dos 31 contos (e poesias) que compõem Fumaça e espelhos, são poucos os que não surpreendem de cara pelas idéias. E os que não chamam atenção nas primeiras linhas geram várias surpresas posteriores, pois você nunca sabe se aquele jovem pacato é um lobisomem ou se o heróico narrador do conto é o assassino. Ou mesmo o assassinado.<br> <br> Fumaça e espelhos é uma coletânea de textos que Neil Gaiman escreveu nas décadas de 80 e 90. Na categoria de escritor ficcionista profissional, ele teve contos encomendados e publicados por diversas revistas e coletâneas, o que logo se nota pela diversidade de temas. Há desde a sua conhecida predileção por terror fantástico e magia até um conto erótico. Um elemento, porém, une todos os textos: seu vínculo com a tradição.']
+livros[4] = ['Sandman - Fim dos mundos', 1994, 3.1, 1500, 'Contos - Ficção', '', '"imagens/Sandman - Fim dos Mundos 1994.png"']
+livros[5] = ['Lugar nenhum', 1996, 4.8, 1500, 'Contos - Ficção', '', '"imagens/Lugar nenhum - 1996.png"']
+livros[6] = ['Livro do cemitério', 2008, 2.5, 1500, 'Contos - Ficção', '', '"imagens/o livro do cemitério - 2008.png"']
+livros[7] = ['Sandman Versão Definitiva (volume 1)', 1996, 3.1, 1500, 'Contos - Ficção', '', '"imagens/Sandman Versão Definitiva (volume 1) - 2006.png"']
+livros[8] = ['Coraline', 2002, 4, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
+livros[9] = ['Livro do cemitério', 2008, 2.5, 1500, 'Contos - Ficção', '', '"imagens/o livro do cemitério - 2008.png"']
+livros[10] = ['Sandman Versão Definitiva (volume 1)', 1996, 3.1, 1500, 'Contos - Ficção', '', '"imagens/Sandman Versão Definitiva (volume 1) - 2006.png"']
+livros[11] = ['Coraline', 2002, 4, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
+livros[12] = ['Livro do cemitério', 2008, 2.5, 1500, 'Contos - Ficção', '', '"imagens/o livro do cemitério - 2008.png"']
+livros[13] = ['Sandman Versão Definitiva (volume 1)', 1996, 3.1, 1500, 'Contos - Ficção', '', '"imagens/Sandman Versão Definitiva (volume 1) - 2006.png"']
+livros[14] = ['Coraline', 2002, 4, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
+livros[15] = ['Coraline', 2002, 4, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
+livros[16] = ['Livro do cemitério', 2008, 2.5, 1500, 'Contos - Ficção', '', '"imagens/o livro do cemitério - 2008.png"']
+livros[17] = ['Sandman Versão Definitiva (volume 1)', 1996, 3.1, 1500, 'Contos - Ficção', '', '"imagens/Sandman Versão Definitiva (volume 1) - 2006.png"']
+livros[18] = ['Coraline', 2002, 4, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
+livros[19] = ['Livro do cemitério', 2008, 2.5, 1500, 'Contos - Ficção', '', '"imagens/o livro do cemitério - 2008.png"']
+livros[20] = ['Sandman Versão Definitiva (volume 1)', 1996, 3.1, 1500, 'Contos - Ficção', '', '"imagens/Sandman Versão Definitiva (volume 1) - 2006.png"']
+livros[21] = ['Coraline', 2002, 4, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
+livros[22] = ['Coraline', 2002, 4, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
+livros[23] = ['Livro do cemitério', 2008, 2.5, 1500, 'Contos - Ficção', '', '"imagens/o livro do cemitério - 2008.png"']
+livros[24] = ['Sandman Versão Definitiva (volume 1)', 1996, 3.1, 1500, 'Contos - Ficção', '', '"imagens/Sandman Versão Definitiva (volume 1) - 2006.png"']
+livros[25] = ['Coraline', 2002, 4, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
 
 function listagemLivros(state, livros) {
 
@@ -42,7 +59,7 @@ function listagemLivros(state, livros) {
         } divPronta += `</div>
     <div class="listalivros2">
     `
-        for (var i = ((state - 1) * 12) + 6 ; i < ((state) * 12); i++) {
+        for (var i = ((state - 1) * 12) + 6; i < ((state) * 12); i++) {
             console.log(livros[i])
             //Só cria a div para o livro caso exista informação pra ser inserida(Se tem mais livros)
             if (livros[i] != null) {
@@ -65,7 +82,27 @@ function listagemLivros(state, livros) {
                         <img src="icones/chevron-left.svg" alt="Voltar lista">
                     </button>
                     <div class="numeroPag">
-                        <p>${state}</p>
+                    `
+        for (let j = state - 2; j <= 5; j++) {
+            if (j > 0) {
+                if (j == state) {
+                    divPronta += `
+                                <p class="paginaAtual">${j} <hr/></p>
+                                `
+                } else {
+                    divPronta += `
+                        <p>${j}</p>
+                        `
+                }
+            }
+        }
+        divPronta += `
+        <p>...</p>
+        `
+        divPronta += `
+        <p>${state + 9}</p>
+        `
+        divPronta += `
                     </div>
                     <button id="${state}" onclick="proxPagina(this.id)">
                         <img src="icones/chevron-right-circle.svg" alt="Voltar lista">
@@ -85,7 +122,7 @@ function listagemLivros(state, livros) {
 }
 
 function selecaoLivro(i, livros) {
-    
+
 
     //Contador para quantas estrelas o livro recebeu
     let qntEstrelas = ''
@@ -143,7 +180,6 @@ function selecaoLivro(i, livros) {
                         <button id="${i}" onclick="inserirLivro(this.id, minhaLista)">Adicionar á minha lista</button>
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -162,19 +198,19 @@ function selecaoLivro(i, livros) {
                 <div>
                     <div class="areaavaliacao">
                     `
-                    //Definindo cor do quadrado de avaliação 
-                    if(livros[i][2] >= 3.5){
-                        paginaCompleta = paginaCompleta + `
+    //Definindo cor do quadrado de avaliação 
+    if (livros[i][2] >= 3.5) {
+        paginaCompleta = paginaCompleta + `
                         <div class="quadradonota verde">${livros[i][2]}</div>
-                        `}else if(livros[i][2] > 1.5 && livros[i][2] < 3.5){
-                            paginaCompleta = paginaCompleta + `
+                        `} else if (livros[i][2] > 1.5 && livros[i][2] < 3.5) {
+        paginaCompleta = paginaCompleta + `
                             <div class="quadradonota amarelo">${livros[i][2]}</div>
-                        `}else{
-                            paginaCompleta = paginaCompleta + `
+                        `} else {
+        paginaCompleta = paginaCompleta + `
                             <div class="quadradonota vermelho">${livros[i][2]}</div>
                         `}
 
-                        paginaCompleta = paginaCompleta + `
+    paginaCompleta = paginaCompleta + `
                         <div class="avaliacao">
                             <div>
                                 ${qntEstrelas}
@@ -239,20 +275,20 @@ function antPagina(state) {
 }
 
 //Função para adicionar livro a minha lista
-function inserirLivro(i, minhaLista){
+function inserirLivro(i, minhaLista) {
     //Variavel para testar se livro existe na lista
     let livroJaAdd = false
 
     //Teste se livro existe na lista
-    for(let j = 0; j < minhaLista.length; j++){
-        if(minhaLista[j] == parseInt(i)){
+    for (let j = 0; j < minhaLista.length; j++) {
+        if (minhaLista[j] == parseInt(i)) {
             livroJaAdd = true
         }
     }
     //Se ele existeir avisa caso contrario adiciona
-    if(livroJaAdd == true){
+    if (livroJaAdd == true) {
         window.alert('Livro ja existe em sua lista')
-    }else{
+    } else {
         minhaLista.push(parseInt(i))
         window.alert('Livro adicionado a sua lista')
     }
@@ -263,7 +299,7 @@ function inserirLivro(i, minhaLista){
 //
 //FUNÇÃO PARA EXPANDIR TEXTO DO AUTOR 
 //
-function expandirTexto(textoCompleto){
+function expandirTexto(textoCompleto) {
     //Inserindo conteudo no paragrafo "continuacao"
     const continuacao = document.querySelector('.continuacao')
     console.log(continuacao)
@@ -273,11 +309,11 @@ function expandirTexto(textoCompleto){
 
     //Transformando botão em ver menos
     const buttonpadrao = document.querySelector('.buttonpadrao')
-    
+
     buttonpadrao.innerHTML = `Ver menos`
 }
 
-function reduzirTexto(){
+function reduzirTexto() {
     const continuacao = document.querySelector('.continuacao')
     continuacao.innerHTML = ''
 }
