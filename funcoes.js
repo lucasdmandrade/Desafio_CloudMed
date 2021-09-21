@@ -1,7 +1,8 @@
+//Contiuação do texto sobre o autor
 let textoCompleto = "Hoje vive perto de Minneapolis, nos Estados Unidos. Descobriu seu amor pelos livros na infância e devorava as histórias de C.S. Lewis, J.R.R. Tolkien, James Branch Cabell e Edgar Alan Poe, entre outros autores. Começou a carreira como jornalista, mas logo o talento para construir tramas e universos únicos o levou para o mundo dos quadrinhos, com a aclamada série Sandman, e depois para a ficção adulta e infantojuvenil. Suas obras receberam inúmeros prêmios e medalhas e foram adaptadas em bem-sucedidas versões para cinema, televisão e até ópera."
-let state = 1
-let minhaLista = [1, 5]
-let livros = []
+let state = 1//Numeração das paginas
+let minhaLista = [1, 5]//Lista de livros do usuario
+let livros = []//Vetor com os livros
 livros[0] = ['Neve vidro e maçãs', 2019, 4.2, 1500, 'Contos - Ficção', '', '"imagens/neve vidro e maçãs - 2019.png"']
 livros[1] = ['Mitologia Nórodica', 2017, 3.7, 1500, 'Contos - Ficção', '', '"imagens/mitologia nordica  - 2017.png"']
 livros[2] = ['Criaturas estranas', 2013, 5, 1500, 'Contos - Ficção', '', '"imagens/Criaturas estranhas - 2013.png"']
@@ -29,6 +30,9 @@ livros[23] = ['Livro do cemitério', 2008, 2.5, 1500, 'Contos - Ficção', '', '
 livros[24] = ['Sandman Versão Definitiva (volume 1)', 1996, 3.1, 1500, 'Contos - Ficção', '', '"imagens/Sandman Versão Definitiva (volume 1) - 2006.png"']
 livros[25] = ['Coraline', 2002, 4, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
 
+//
+//FUNÇÃO PARA CRIAR LISTA COM OS LIVROS DA PAGINA
+//
 function listagemLivros(state, livros) {
 
 
@@ -121,6 +125,9 @@ function listagemLivros(state, livros) {
     }
 }
 
+//---------------------------------------------
+//GERAR PAGINA COM DETALHES DO LIVRO CLICADO
+//
 function selecaoLivro(i, livros) {
 
 
@@ -242,8 +249,9 @@ function selecaoLivro(i, livros) {
         criarPagina(paginaCompleta)
     }, 1000);
 }
-
-//Função para atualizar os dados da pagina
+//-----------------------------------------
+//FUNÇÃO PARA ATUALIZAR DADOS DA PAGINA
+//------------------------------------------
 function criarPagina(paginaMontada) {
     //Puxando a root para alterar a pagina por completo
     const root = document.querySelector('.root')
@@ -252,8 +260,9 @@ function criarPagina(paginaMontada) {
     window.scroll(0, 0)
 
 }
-
-//Função para mudar pagina livro
+//------------------------------------------
+//Função para IR PARA PROXIMA PAGINA(OBRAS)
+//
 function proxPagina(state) {
     state++
     console.log(state)
@@ -261,6 +270,9 @@ function proxPagina(state) {
     listagemLivros(state, livros)
 }
 
+//
+//FUNÇÃO PARA VOLTAR PAGINA(OBRAS)
+//
 function antPagina(state) {
     if (state > 1) {
         state = state - 1
@@ -274,7 +286,9 @@ function antPagina(state) {
     return state
 }
 
+//
 //Função para adicionar livro a minha lista
+//
 function inserirLivro(i, minhaLista) {
     //Variavel para testar se livro existe na lista
     let livroJaAdd = false
@@ -296,7 +310,7 @@ function inserirLivro(i, minhaLista) {
     return minhaLista
 }
 
-//
+//--------------------------------------------
 //FUNÇÃO PARA EXPANDIR TEXTO DO AUTOR 
 //
 function expandirTexto(textoCompleto) {
@@ -308,12 +322,30 @@ function expandirTexto(textoCompleto) {
     console.log(continuacao)
 
     //Transformando botão em ver menos
-    const buttonpadrao = document.querySelector('.buttonpadrao')
+    const buttons = document.querySelector('.buttons')
 
-    buttonpadrao.innerHTML = `Ver menos`
+    buttons.innerHTML = `
+        <div class="buttons">
+            <button class="seguir" onclick="">Seguir</button>
+            <button class="buttonpadrao" onclick="reduzirTexto()">Ver menos</button>
+        </div>
+    `
+    console.log(buttons)
 }
-
+//
+//FUNÇÃO PARA REDUZIR TESTO DO AUTOR
+//
 function reduzirTexto() {
     const continuacao = document.querySelector('.continuacao')
     continuacao.innerHTML = ''
+
+    //Voltando botão ver mais
+    const buttons = document.querySelector('.buttons')
+
+    buttons.innerHTML = `
+        <div class="buttons">
+            <button class="seguir" onclick="">Seguir</button>
+            <button class="buttonpadrao" onclick="expandirTexto(textoCompleto)">Ver mais</button>
+        </div>
+    `
 }
