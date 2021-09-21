@@ -1,17 +1,17 @@
 let state = 1
 let minhaLista = [1, 5]
+let livros = []
+    livros[0] = ['Neve vidro e maçãs', 2019, 4.2, 1500, 'Contos - Ficção', '', '"imagens/neve vidro e maçãs - 2019.png"']
+    livros[1] = ['Mitologia Nórodica', 2017, 3.7, 1500, 'Contos - Ficção', '', '"imagens/mitologia nordica  - 2017.png"']
+    livros[2] = ['Criaturas estranas', 2013, 5, 1500, 'Contos - Ficção', '', '"imagens/Criaturas estranhas - 2013.png"']
+    livros[3] = ['Fumaça e espelhos', 1998, 1.5, 1500, 'Contos - Ficção', 'Fumaça e espelhos é uma coletânea de textos que Neil Gaiman escreveu nas décadas de 80 e 90. Na categoria de escritor ficcionista profissional, ele teve contos encomendados e publicados por diversas revistas e coletâneas, o que logo se nota pela diversidade de temas', '"imagens/Fumaça e espelhos - 1999.png"', 'Dos 31 contos (e poesias) que compõem Fumaça e espelhos, são poucos os que não surpreendem de cara pelas idéias. E os que não chamam atenção nas primeiras linhas geram várias surpresas posteriores, pois você nunca sabe se aquele jovem pacato é um lobisomem ou se o heróico narrador do conto é o assassino. Ou mesmo o assassinado.<br> <br> Fumaça e espelhos é uma coletânea de textos que Neil Gaiman escreveu nas décadas de 80 e 90. Na categoria de escritor ficcionista profissional, ele teve contos encomendados e publicados por diversas revistas e coletâneas, o que logo se nota pela diversidade de temas. Há desde a sua conhecida predileção por terror fantástico e magia até um conto erótico. Um elemento, porém, une todos os textos: seu vínculo com a tradição.']
+    livros[4] = ['Sandman - Fim dos mundos', 1994, 3.1, 1500, 'Contos - Ficção', '', '"imagens/Sandman - Fim dos Mundos 1994.png"']
+    livros[5] = ['Lugar nenhum', 1996, 4.8, 1500, 'Contos - Ficção', '', '"imagens/Lugar nenhum - 1996.png"']
+    livros[6] = ['Livro do cemitério', 2008, 2.5, 1500, 'Contos - Ficção', '', '"imagens/o livro do cemitério - 2008.png"']
+    livros[7] = ['Sandman Versão Definitiva (volume 1)', 1996, 3.1, 1500, 'Contos - Ficção', '', '"imagens/Sandman Versão Definitiva (volume 1) - 2006.png"']
+    livros[8] = ['Coraline', 2002, 4, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
 
-function listagemLivros(state) {
-    let livros = []
-    livros[0] = ['Neve vidro e maçãs', 2019, 4.2, 1500, ['Contos', 'Ficção'], '', '"imagens/neve vidro e maçãs - 2019.png"']
-    livros[1] = ['Mitologia Nórodica', 2017, 4.2, 1500, ['Contos', 'Ficção'], '', '"imagens/mitologia nordica  - 2017.png"']
-    livros[2] = ['Criaturas estranas', 2013, 4.2, 1500, ['Contos', 'Ficção'], '', '"imagens/Criaturas estranhas - 2013.png"']
-    livros[3] = ['Fumaça e espelhos', 1998, 4.2, 1500, ['Contos', 'Ficção'], '', '"imagens/Fumaça e espelhos - 1999.png"']
-    livros[4] = ['Sandman - Fim dos mundos', 1994, 4.2, 1500, ['Contos', 'Ficção'], '', '"imagens/Sandman - Fim dos Mundos 1994.png"']
-    livros[5] = ['Lugar nenhum', 1996, 4.2, 1500, ['Contos', 'Ficção'], '', '"imagens/Lugar nenhum - 1996.png"']
-    livros[6] = ['Livro do cemitério', 2008, 4.2, 1500, ['Contos', 'Ficção'], '', '"imagens/o livro do cemitério - 2008.png"']
-    livros[7] = ['Sandman Versão Definitiva (volume 1)', 1996, 4.2, 1500, ['Contos', 'Ficção'], '', '"imagens/Sandman Versão Definitiva (volume 1) - 2006.png"']
-    livros[8] = ['Coraline', 2002, 4.2, 1500, ['Contos', 'Ficção'], '', '"imagens/Coraline - 2002.png"']
+function listagemLivros(state, livros) {
 
 
     //Criando vetor que armazenara a div responsavel pela listagem dos livros
@@ -31,7 +31,7 @@ function listagemLivros(state) {
                 //href para inserir id da imagem q quero aumentar na url 
                 divPronta += `
             <div class="livro livroTransition">
-                <a id=${i} href="#${i}" onClick="selecaoLivro(this.id)">
+                <a id=${i} href="#${i}" onClick="selecaoLivro(this.id, livros)">
                     <img src=${livros[i][6]} /> 
                 </a>
                 <h3>${livros[i][0]}</h3>
@@ -48,7 +48,7 @@ function listagemLivros(state) {
                 //href para inserir id da imagem q quero aumentar na url 
                 divPronta += `
         <div class="livro livroTransition">
-            <a id=${i} href="#${i}" onClick="selecaoLivro(this.id)">
+            <a id=${i} href="#${i}" onClick="selecaoLivro(this.id, livros)">
                 <img src=${livros[i][6]} /> 
             </a>
             <h3>${livros[i][0]}</h3>
@@ -83,17 +83,8 @@ function listagemLivros(state) {
     }
 }
 
-function selecaoLivro(i) {
-    let livros = []
-    livros[0] = ['Neve vidro e maçãs', 2019, 4.2, 1500, 'Contos - Ficção', '', '"imagens/neve vidro e maçãs - 2019.png"']
-    livros[1] = ['Mitologia Nórodica', 2017, 3.7, 1500, 'Contos - Ficção', '', '"imagens/mitologia nordica  - 2017.png"']
-    livros[2] = ['Criaturas estranas', 2013, 5, 1500, 'Contos - Ficção', '', '"imagens/Criaturas estranhas - 2013.png"']
-    livros[3] = ['Fumaça e espelhos', 1998, 1.5, 1500, 'Contos - Ficção', 'Fumaça e espelhos é uma coletânea de textos que Neil Gaiman escreveu nas décadas de 80 e 90. Na categoria de escritor ficcionista profissional, ele teve contos encomendados e publicados por diversas revistas e coletâneas, o que logo se nota pela diversidade de temas', '"imagens/Fumaça e espelhos - 1999.png"', 'Dos 31 contos (e poesias) que compõem Fumaça e espelhos, são poucos os que não surpreendem de cara pelas idéias. E os que não chamam atenção nas primeiras linhas geram várias surpresas posteriores, pois você nunca sabe se aquele jovem pacato é um lobisomem ou se o heróico narrador do conto é o assassino. Ou mesmo o assassinado.<br> <br> Fumaça e espelhos é uma coletânea de textos que Neil Gaiman escreveu nas décadas de 80 e 90. Na categoria de escritor ficcionista profissional, ele teve contos encomendados e publicados por diversas revistas e coletâneas, o que logo se nota pela diversidade de temas. Há desde a sua conhecida predileção por terror fantástico e magia até um conto erótico. Um elemento, porém, une todos os textos: seu vínculo com a tradição.']
-    livros[4] = ['Sandman - Fim dos mundos', 1994, 3.1, 1500, 'Contos - Ficção', 'Fumaça e espelhos é uma coletânea de textos que Neil Gaiman escreveu nas décadas de 80 e 90. Na categoria de escritor ficcionista profissional, ele teve contos encomendados e publicados por diversas revistas e coletâneas, o que logo se nota pela diversidade de temas.', '"imagens/Sandman - Fim dos Mundos 1994.png"']
-    livros[5] = ['Lugar nenhum', 1996, 4.8, 1500, 'Contos - Ficção', '', '"imagens/Lugar nenhum - 1996.png"']
-    livros[6] = ['Livro do cemitério', 2008, 2.5, 1500, 'Contos - Ficção', '', '"imagens/o livro do cemitério - 2008.png"']
-    livros[7] = ['Sandman Versão Definitiva (volume 1)', 1996, 3.1, 1500, 'Contos - Ficção', '', '"imagens/Sandman Versão Definitiva (volume 1) - 2006.png"']
-    livros[8] = ['Coraline', 2002, 4, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
+function selecaoLivro(i, livros) {
+    
 
     //Contador para quantas estrelas o livro recebeu
     let qntEstrelas = ''
@@ -230,7 +221,7 @@ function proxPagina(state) {
     state++
     console.log(state)
 
-    listagemLivros(state)
+    listagemLivros(state, livros)
 }
 
 function antPagina(state) {
@@ -241,18 +232,29 @@ function antPagina(state) {
     }
     console.log(state)
 
-    listagemLivros(state)
+    listagemLivros(state, livros)
 
     return state
 }
 
 //Função para adicionar livro a minha lista
 function inserirLivro(i, minhaLista){
-    console.log(i)
-    console.log(minhaLista)
-    let listaAtt = []
-    listaAtt.push(minhaLista)
-    minhaLista.push(i)
+    //Variavel para testar se livro existe na lista
+    let livroJaAdd = false
+
+    //Teste se livro existe na lista
+    for(let j = 0; j < minhaLista.length; j++){
+        if(minhaLista[j] == parseInt(i)){
+            livroJaAdd = true
+        }
+    }
+    //Se ele existeir avisa caso contrario adiciona
+    if(livroJaAdd == true){
+        window.alert('Livro ja existe em sua lista')
+    }else{
+        minhaLista.push(parseInt(i))
+        window.alert('Livro adicionado a sua lista')
+    }
     console.log(minhaLista)
     return minhaLista
 }
