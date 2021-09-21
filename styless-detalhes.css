@@ -6,6 +6,7 @@ header{
     display: flex;
     align-items: center;
 }
+/**Botão para voltar a tela inicial **/
 .retorno{
     height: 8vh;
 }
@@ -14,9 +15,11 @@ header{
     margin: 0px 10px 10px 30px;
     width: 15%;
 }
+/**Div engloba todos os elementos avaliativos  **/
 .areaavaliacao{
     display: flex;
 }
+/**Nota com contorno verde **/
 .quadradonota{
     display: flex;
     align-items: center;
@@ -30,12 +33,27 @@ header{
     font-weight: bold;
 }
 
+/**Engolba as estrelas e a quantidade de avaliaçoes q o livro teve**/
 .avaliacao{
     margin-left: 8px;
 }
 .avaliacao p{
     font-weight: bold;
 }
+
+/**Resenha do livro **/
 .resenha{
     max-width: 150vh;
+}
+
+
+/**cores de fundo do quadrado com base na nota do livro **/
+.verde{
+    background-color: green;
+}
+.amarelo{
+    background-color: yellow;
+}
+.vermelho{
+    background-color: red;
 }

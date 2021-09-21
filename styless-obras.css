@@ -11,7 +11,11 @@
 
 .listalivros{
     display: flex;
-    align-items:center;
+    align-items:baseline;
+}
+.listalivros2{
+    display: flex;
+    align-items:baseline;
 }
 
 .livro{
@@ -43,12 +47,15 @@
     text-justify: center;
 }
 
+/**Efeito para aumentar livro selecionado na transição de tela **/
 .livroTransition a{
     transition: transform 2s;
 }
 .livroTransition a:target{
     transform: scale(3);
 }
+
+/**Paginação da listagem **/
 .listagemLivros{
     display: flex;
     align-items: center;

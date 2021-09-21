@@ -1,4 +1,5 @@
 let state = 1
+let minhaLista = [1, 5]
 
 function listagemLivros(state) {
     let livros = []
@@ -17,13 +18,13 @@ function listagemLivros(state) {
     let divPronta = '<div id="state" class="listalivros">'
 
     //Teste se existem livros pra carregar a proxima pagina
-    if ((state - 1) * 6 > livros.length) {
+    if ((state - 1) * 12 >= livros.length) {
         window.alert('Impossivel(err: não há mais livros)')
     } else {
 
         // Loop para crir divs para cada livro
         //Usando state para paginação 
-        for (var i = (state - 1) * 6; i < 6 * state; i++) {
+        for (var i = (state - 1) * 12; i < ((state - 1) * 12 + 6); i++) {
             console.log(livros[i])
             //Só cria a div para o livro caso exista informação pra ser inserida(Se tem mais livros)
             if (livros[i] != null) {
@@ -40,6 +41,21 @@ function listagemLivros(state) {
         } divPronta += `</div>
     <div class="listalivros2">
     `
+        for (var i = ((state - 1) * 12) + 6 ; i < ((state) * 12); i++) {
+            console.log(livros[i])
+            //Só cria a div para o livro caso exista informação pra ser inserida(Se tem mais livros)
+            if (livros[i] != null) {
+                //href para inserir id da imagem q quero aumentar na url 
+                divPronta += `
+        <div class="livro livroTransition">
+            <a id=${i} href="#${i}" onClick="selecaoLivro(this.id)">
+                <img src=${livros[i][6]} /> 
+            </a>
+            <h3>${livros[i][0]}</h3>
+            <p>${livros[i][1]}</p>
+        </div>
+        `}
+        }
 
         //Inserindo div fechamento e botões paginação 
         divPronta += `</div>
@@ -65,25 +81,6 @@ function listagemLivros(state) {
         //Retornando a div com as infos
         listacompleta.innerHTML = divPronta
     }
-}
-
-
-//Função paginação livros
-function pagination(livros) {
-    //Quantidade de paginas
-    let contPages = 1
-
-    //Definindo quantas paginas existirão
-    if (livros.length % 10 == 0) {
-        contPages += livros.length % 10
-    } else {
-        let teste = 0
-        teste = livros.length - (livros.lenght % 10)
-        constPages += teste / 10
-    }
-
-    //Falta puxar os livros de acordo com a pagina
-    // (pagina - 1) * 10 e receber o vetor auto incrementando ate 9
 }
 
 function selecaoLivro(i) {
@@ -151,7 +148,7 @@ function selecaoLivro(i) {
                     <h4>${livros[i][4]}</h4>
 
                     <div class="addlista">
-                        <button onclick="">Adicionar á minha lista</button>
+                        <button id="${i}" onclick="inserirLivro(this.id, minhaLista)">Adicionar á minha lista</button>
                     </div>
                 </div>
 
@@ -172,7 +169,20 @@ function selecaoLivro(i) {
                 </div>
                 <div>
                     <div class="areaavaliacao">
-                        <div class="quadradonota">${livros[i][2]}</div>
+                    `
+                    //Definindo cor do quadrado de avaliação 
+                    if(livros[i][2] >= 3.5){
+                        paginaCompleta = paginaCompleta + `
+                        <div class="quadradonota verde">${livros[i][2]}</div>
+                        `}else if(livros[i][2] > 1.5 && livros[i][2] < 3.5){
+                            paginaCompleta = paginaCompleta + `
+                            <div class="quadradonota amarelo">${livros[i][2]}</div>
+                        `}else{
+                            paginaCompleta = paginaCompleta + `
+                            <div class="quadradonota vermelho">${livros[i][2]}</div>
+                        `}
+
+                        paginaCompleta = paginaCompleta + `
                         <div class="avaliacao">
                             <div>
                                 ${qntEstrelas}
@@ -203,7 +213,6 @@ function selecaoLivro(i) {
         //Chamando função reponsavel pela atualização dos dados da pagina 
         criarPagina(paginaCompleta)
     }, 1000);
-
 }
 
 //Função para atualizar os dados da pagina
@@ -212,6 +221,8 @@ function criarPagina(paginaMontada) {
     const root = document.querySelector('.root')
     //Inserindo pagina refatorada
     root.innerHTML = paginaMontada
+    window.scroll(0, 0)
+
 }
 
 //Função para mudar pagina livro
@@ -233,4 +244,15 @@ function antPagina(state) {
     listagemLivros(state)
 
     return state
+}
+
+//Função para adicionar livro a minha lista
+function inserirLivro(i, minhaLista){
+    console.log(i)
+    console.log(minhaLista)
+    let listaAtt = []
+    listaAtt.push(minhaLista)
+    minhaLista.push(i)
+    console.log(minhaLista)
+    return minhaLista
 }
