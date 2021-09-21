@@ -1,3 +1,4 @@
+let textoCompleto="Hoje vive perto de Minneapolis, nos Estados Unidos. Descobriu seu amor pelos livros na infância e devorava as histórias de C.S. Lewis, J.R.R. Tolkien, James Branch Cabell e Edgar Alan Poe, entre outros autores. Começou a carreira como jornalista, mas logo o talento para construir tramas e universos únicos o levou para o mundo dos quadrinhos, com a aclamada série Sandman, e depois para a ficção adulta e infantojuvenil. Suas obras receberam inúmeros prêmios e medalhas e foram adaptadas em bem-sucedidas versões para cinema, televisão e até ópera."
 let state = 1
 let minhaLista = [1, 5]
 let livros = []
@@ -257,4 +258,26 @@ function inserirLivro(i, minhaLista){
     }
     console.log(minhaLista)
     return minhaLista
+}
+
+//
+//FUNÇÃO PARA EXPANDIR TEXTO DO AUTOR 
+//
+function expandirTexto(textoCompleto){
+    //Inserindo conteudo no paragrafo "continuacao"
+    const continuacao = document.querySelector('.continuacao')
+    console.log(continuacao)
+    let texto = textoCompleto
+    continuacao.innerHTML = texto
+    console.log(continuacao)
+
+    //Transformando botão em ver menos
+    const buttonpadrao = document.querySelector('.buttonpadrao')
+    
+    buttonpadrao.innerHTML = `Ver menos`
+}
+
+function reduzirTexto(){
+    const continuacao = document.querySelector('.continuacao')
+    continuacao.innerHTML = ''
 }
