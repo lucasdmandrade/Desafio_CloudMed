@@ -28,13 +28,13 @@
 }
 
 
-.addlista{
+.addLista{
     display: flex;
     justify-content: center;
 
     height: 8vh;
 }
-.addlista button{
+.addLista button{
     margin-right: 30px;
     border-radius: 20px;
     width: 95%;
