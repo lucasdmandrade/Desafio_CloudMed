@@ -1,7 +1,7 @@
 //Contiuação do texto sobre o autor que sera exibido ao clicar no botão "ver mais"
 let textoCompleto = "Hoje vive perto de Minneapolis, nos Estados Unidos. Descobriu seu amor pelos livros na infância e devorava as histórias de C.S. Lewis, J.R.R. Tolkien, James Branch Cabell e Edgar Alan Poe, entre outros autores. Começou a carreira como jornalista, mas logo o talento para construir tramas e universos únicos o levou para o mundo dos quadrinhos, com a aclamada série Sandman, e depois para a ficção adulta e infantojuvenil. Suas obras receberam inúmeros prêmios e medalhas e foram adaptadas em bem-sucedidas versões para cinema, televisão e até ópera."
 let state = 1 //Numeração das paginas(Define a pagina atual e é passado como id de elementos que a usam )
-let minhaLista = [1, 5]//Lista de livros do usuario(por estar definida aqui reseta quando o usuario voltar ao index)
+let minhaLista = [1, 5, 3, 7, 0,]//Lista de livros do usuario(por estar definida aqui reseta quando o usuario voltar ao index)
 let livros = []//Vetor com os livros
 livros[0] = ['Neve vidro e maçãs', 2019, 4.2, 1500, 'Contos - Ficção', '', '"imagens/neve vidro e maçãs - 2019.png"']
 livros[1] = ['Mitologia Nórodica', 2017, 3.7, 1500, 'Contos - Ficção', '', '"imagens/mitologia nordica  - 2017.png"']
@@ -379,4 +379,65 @@ function reduzirTexto() {
             <button class="buttonPadrao" onclick="expandirTexto(textoCompleto)">Ver mais</button>
         </div>
     `
+}
+
+//
+//FUNÇÃO PARA ABRIR O MODAL(MOSTRAR)
+//
+function abrirModal(nomeModal){
+    //Puxando codigo html do modal pelo Id
+    let modal = document.getElementById(nomeModal)
+    console.log(nomeModal)
+    console.log(modal)
+
+    //Se der erro(modal não ser definido ou estar vazio)
+    if(typeof modal == 'undefined' || modal === null){
+        //Só cancela
+        return
+    }else{
+        //Mundando display de 'none' para 'Block' pra aparecer o modal 
+        modal.style.display =  'Block'
+        inserirMinhaLista()
+    }
+}
+
+//
+//FUNÇÃO PARA FECHAR MODAL(esconder)
+//
+function fecharModal(nomeModal){
+    //Se der erro(modal não ser definido ou estar vazio)
+    if(typeof modal == 'undefined' || modal === null){
+        return
+    }else{
+        //Mundando display para 'none' para 'sumir'
+        modal.style.display =  'none'
+    }
+}
+
+//
+//FUNÇÃO PARA ADICIONAR LIVROS DA LISTA NO MODAL
+//
+function inserirMinhaLista(){
+    //Função que armazenara a div
+    let divMinhaLista ='<div class="minhaLista">'
+    //Loop para adicionar os livros no modal
+    for(let j = 0; j < minhaLista.length; j++){
+
+        divMinhaLista+=`
+        <div class="livro">
+                <a id=${j} href="#${j}" onClick="selecaoLivro(this.id, livros)">
+                    <img src=${livros[j][6]} /> 
+                </a>
+            </div>
+        `
+        //Forçando limite de 5 livros(sem paginação)
+        if(j == 4){
+            j = minhaLista.length
+        }
+    }
+    divMinhaLista += '</div>'
+    console.log(divMinhaLista)
+
+    //Adicionando a div com os livros ao modal
+    modalBody.innerHTML = divMinhaLista
 }

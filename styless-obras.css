@@ -86,3 +86,35 @@
     font-weight: bold;
     width: 15px;
 }
+
+.modal{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: none;
+}
+
+.modal-interno{
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 60vw;
+    height: 50vh;
+    background-color: #eee;
+    padding: 10px;
+
+    border-radius: 20px;
+}
+.modal-body{
+    display: flex;
+    width: 55vw;
+    height: 33vh;
+}
+.modal-body img{
+    height: 100%;
+    width: 100%;
+}
