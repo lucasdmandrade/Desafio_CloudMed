@@ -44,6 +44,7 @@ function antPagina(state) {
         state = state - 1
     } else {//Se não for mostra erro
         window.alert('Não há pagina anteriorior')
+        return
     }
     console.log(state)
 
