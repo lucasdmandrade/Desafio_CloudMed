@@ -110,11 +110,23 @@
     border-radius: 20px;
 }
 .modal-body{
-    display: flex;
     width: 55vw;
     height: 33vh;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .modal-body img{
     height: 100%;
     width: 100%;
+}
+.modal-footer{
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+.modal-footer button{
+    width: 20vh;
 }
