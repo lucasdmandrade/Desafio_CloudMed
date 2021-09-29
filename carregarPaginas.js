@@ -2,7 +2,7 @@
 let textoCompleto = "Hoje vive perto de Minneapolis, nos Estados Unidos. Descobriu seu amor pelos livros na infância e devorava as histórias de C.S. Lewis, J.R.R. Tolkien, James Branch Cabell e Edgar Alan Poe, entre outros autores. Começou a carreira como jornalista, mas logo o talento para construir tramas e universos únicos o levou para o mundo dos quadrinhos, com a aclamada série Sandman, e depois para a ficção adulta e infantojuvenil. Suas obras receberam inúmeros prêmios e medalhas e foram adaptadas em bem-sucedidas versões para cinema, televisão e até ópera."
 let state = 1 //Numeração das paginas(Define a pagina atual e é passado como id de elementos que a usam )
 let stateModal = 1 //Pagina do modal(Minha lista)
-let minhaLista = [1, 5, 3, 7, 0,]//Lista de livros do usuario(por estar definida aqui reseta quando o usuario voltar ao index)
+let minhaLista = [1, 5, 3, 7, 0, 7, 9, 1, 6, 4, 2, 3]//Lista de livros do usuario(por estar definida aqui reseta quando o usuario voltar ao index)
 let livros = []//Vetor com os livros
 livros[0] = ['Neve vidro e maçãs', 2019, 4.2, 1500, 'Contos - Ficção', '', '"imagens/neve vidro e maçãs - 2019.png"']
 livros[1] = ['Mitologia Nórodica', 2017, 3.7, 1500, 'Contos - Ficção', '', '"imagens/mitologia nordica  - 2017.png"']
@@ -13,7 +13,7 @@ livros[5] = ['Lugar nenhum', 1996, 4.8, 1500, 'Contos - Ficção', '', '"imagens
 livros[6] = ['Livro do cemitério', 2008, 2.5, 1500, 'Contos - Ficção', '', '"imagens/o livro do cemitério - 2008.png"']
 livros[7] = ['Sandman Versão Definitiva (volume 1)', 1996, 3.1, 1500, 'Contos - Ficção', '', '"imagens/Sandman Versão Definitiva (volume 1) - 2006.png"']
 livros[8] = ['Coraline', 2002, 4, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
-/*livros[9] = ['Livro do cemitério', 2008, 2.5, 1500, 'Contos - Ficção', '', '"imagens/o livro do cemitério - 2008.png"']
+livros[9] = ['Livro do cemitério', 2008, 2.5, 1500, 'Contos - Ficção', '', '"imagens/o livro do cemitério - 2008.png"']
 livros[10] = ['Sandman Versão Definitiva (volume 1)', 1996, 3.1, 1500, 'Contos - Ficção', '', '"imagens/Sandman Versão Definitiva (volume 1) - 2006.png"']
 livros[11] = ['Coraline', 2002, 4, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
 livros[12] = ['Livro do cemitério', 2008, 2.5, 1500, 'Contos - Ficção', '', '"imagens/o livro do cemitério - 2008.png"']
@@ -30,7 +30,7 @@ livros[22] = ['Coraline', 2002, 4, 1500, 'Contos - Ficção', '', '"imagens/Cora
 livros[23] = ['Livro do cemitério', 2008, 2.5, 1500, 'Contos - Ficção', '', '"imagens/o livro do cemitério - 2008.png"']
 livros[24] = ['Sandman Versão Definitiva (volume 1)', 1996, 3.1, 1500, 'Contos - Ficção', '', '"imagens/Sandman Versão Definitiva (volume 1) - 2006.png"']
 livros[25] = ['Coraline', 2002, 4, 1500, 'Contos - Ficção', '', '"imagens/Coraline - 2002.png"']
-*/
+
 
 //
 //FUNÇÃO PARA CRIAR LISTA COM OS LIVROS DA PAGINA(E os botões da paginação)

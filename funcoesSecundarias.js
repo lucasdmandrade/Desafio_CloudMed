@@ -42,16 +42,20 @@ function antPagina(state) {
     //Confere se é possivel voltar
     if (state > 1) {
         state = state - 1
+
+        if (modal.style.display == '' || modal.style.display == 'none') {
+            //Chama função que que gera listagem 
+            listagemLivros(state, livros)
+        } else {
+            inserirMinhaLista(state)
+            inserirModalFooter(state)
+        }
+
     } else {//Se não for mostra erro
         window.alert('Não há pagina anteriorior')
         return
     }
     console.log(state)
-
-    //Chama função que gera listagem
-    listagemLivros(state, livros)
-
-    return state
 }
 
 //
@@ -62,8 +66,19 @@ function proxPagina(state) {
     state++
     console.log(state)
 
-    //Chama função que que gera listagem 
-    listagemLivros(state, livros)
+    if (modal.style.display == '' || modal.style.display == 'none') {
+        //Chama função que que gera listagem 
+        listagemLivros(state, livros)
+    } else {
+        if ((state - 1) * 5 > minhaLista.length) {
+            window.alert('Não há mais livros em sua lista')
+            return
+        } else {
+            inserirMinhaLista(state)
+            inserirModalFooter(state)
+        }
+    }
+
 }
 
 //--------------------------------------------
@@ -151,11 +166,11 @@ function fecharModal(nomeModal) {
 //
 //FUNÇÃO PARA ADICIONAR LIVROS DA LISTA NO MODAL
 //
-function inserirMinhaLista(stateMinhaLista) {
+function inserirMinhaLista(state) {
     //Função que armazenará a div
     let divMinhaLista = '<div class="minhaLista">'
     //Loop para adicionar os livros no modal
-    for (let j = 0; j < minhaLista.length; j++) {
+    for (let j = (state - 1) * 5; j < state * 5 && j < minhaLista.length; j++) {
 
         divMinhaLista += `
         <div class="livro">
@@ -170,12 +185,12 @@ function inserirMinhaLista(stateMinhaLista) {
         }
     }
     divMinhaLista += '</div>'
-    console.log(divMinhaLista)
+
     //Adicionando a div com os livros ao modal
     modalBody.innerHTML = divMinhaLista
 }
 
-function inserirModalFooter(state){
+function inserirModalFooter(state) {
 
     let divModalFooter = `
     <button class="buttonPadrao" onclick="fecharModal('modal')">Fechar</button>
@@ -184,7 +199,7 @@ function inserirModalFooter(state){
                             <img src="icones/chevron-left.svg" alt="Voltar lista">
                         </button>
                         <p>
-                            1
+                            ${state}
                         </p>
                         <button id="${state}" onclick="proxPagina(this.id)">
                             <img src="icones/chevron-right-circle.svg" alt="Voltar lista">
@@ -192,6 +207,5 @@ function inserirModalFooter(state){
                     </div>
     `
 
-    window.alert(divModalFooter)
     modalFooter.innerHTML = divModalFooter
 }
