@@ -78,19 +78,8 @@
 
 
                 </div>
-                <div class="modal-footer">
-                    <button class="buttonPadrao" onclick="fecharModal('modal')">Fechar</button>
-                    <div>
-                        <button id="${state}" onclick="antPagina(this.id)">
-                            <img src="icones/chevron-left.svg" alt="Voltar lista">
-                        </button>
-                        <p>
-                            1
-                        </p>
-                        <button id="${state}" onclick="proxPagina(this.id)">
-                            <img src="icones/chevron-right-circle.svg" alt="Voltar lista">
-                        </button>
-                    </div>
+                <div id="modalFooter" class="modal-footer">
+
                 </div>
             </div>
         </div>
@@ -119,10 +108,9 @@
                 </div>
             </div>
         </div>
-    </div>
-    <script type="text/javascript" src="carregarPaginas.js"></script>
-    <script type="text/javascript" src="funcoesSecundarias.js"></script>
-    <script>listagemLivros(state, livros)</script>
+        <script type="text/javascript" src="carregarPaginas.js"></script>
+        <script type="text/javascript" src="funcoesSecundarias.js"></script>
+        <script>listagemLivros(state, livros)</script>
 </body>
 
 </html>

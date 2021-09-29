@@ -117,46 +117,47 @@ function reduzirTexto() {
 //
 //FUNÇÃO PARA ABRIR O MODAL(MOSTRAR)
 //
-function abrirModal(nomeModal){
+function abrirModal(nomeModal) {
     //Puxando codigo html do modal pelo Id
     let modal = document.getElementById(nomeModal)
     console.log(nomeModal)
     console.log(modal)
 
     //Se der erro(modal não ser definido ou estar vazio)
-    if(typeof modal == 'undefined' || modal === null){
+    if (typeof modal == 'undefined' || modal === null) {
         //Só cancela
         return
-    }else{
+    } else {
         //Mundando display de 'none' para 'Block' pra aparecer o modal 
-        modal.style.display =  'Block'
-        inserirMinhaLista()
+        modal.style.display = 'Block'
+        inserirMinhaLista(stateModal)
+        inserirModalFooter(stateModal)
     }
 }
 
 //
 //FUNÇÃO PARA FECHAR MODAL(esconder)
 //
-function fecharModal(nomeModal){
+function fecharModal(nomeModal) {
     //Se der erro(modal não ser definido ou estar vazio)
-    if(typeof modal == 'undefined' || modal === null){
+    if (typeof modal == 'undefined' || modal === null) {
         return
-    }else{
+    } else {
         //Mundando display para 'none' para 'sumir'
-        modal.style.display =  'none'
+        modal.style.display = 'none'
     }
 }
 
 //
 //FUNÇÃO PARA ADICIONAR LIVROS DA LISTA NO MODAL
 //
-function inserirMinhaLista(stateMinhaLista){
+function inserirMinhaLista(stateMinhaLista) {
     //Função que armazenará a div
-    let divMinhaLista ='<div class="minhaLista">'
+    let divMinhaLista = '<div class="minhaLista">'
     //Loop para adicionar os livros no modal
-    for(let j = 0; j < minhaLista.length; j++){
+    for (let j = 0; j < minhaLista.length; j++) {
 
-        divMinhaLista+=`
+        divMinhaLista += `
         <div class="livro">
                 <a id=${j} href="#${j}" onClick="selecaoLivro(this.id, livros)">
                     <img src=${livros[j][6]} /> 
@@ -164,7 +165,7 @@ function inserirMinhaLista(stateMinhaLista){
             </div>
         `
         //Forçando limite de 5 livros(sem paginação)
-        if(j == 4){
+        if (j == 4) {
             j = minhaLista.length
         }
     }
@@ -172,4 +173,25 @@ function inserirMinhaLista(stateMinhaLista){
     console.log(divMinhaLista)
     //Adicionando a div com os livros ao modal
     modalBody.innerHTML = divMinhaLista
+}
+
+function inserirModalFooter(state){
+
+    let divModalFooter = `
+    <button class="buttonPadrao" onclick="fecharModal('modal')">Fechar</button>
+                    <div>
+                        <button id="${state}" onclick="antPagina(this.id)">
+                            <img src="icones/chevron-left.svg" alt="Voltar lista">
+                        </button>
+                        <p>
+                            1
+                        </p>
+                        <button id="${state}" onclick="proxPagina(this.id)">
+                            <img src="icones/chevron-right-circle.svg" alt="Voltar lista">
+                        </button>
+                    </div>
+    `
+
+    window.alert(divModalFooter)
+    modalFooter.innerHTML = divModalFooter
 }

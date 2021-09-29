@@ -1,6 +1,7 @@
 //Contiuação do texto sobre o autor que sera exibido ao clicar no botão "ver mais"
 let textoCompleto = "Hoje vive perto de Minneapolis, nos Estados Unidos. Descobriu seu amor pelos livros na infância e devorava as histórias de C.S. Lewis, J.R.R. Tolkien, James Branch Cabell e Edgar Alan Poe, entre outros autores. Começou a carreira como jornalista, mas logo o talento para construir tramas e universos únicos o levou para o mundo dos quadrinhos, com a aclamada série Sandman, e depois para a ficção adulta e infantojuvenil. Suas obras receberam inúmeros prêmios e medalhas e foram adaptadas em bem-sucedidas versões para cinema, televisão e até ópera."
 let state = 1 //Numeração das paginas(Define a pagina atual e é passado como id de elementos que a usam )
+let stateModal = 1 //Pagina do modal(Minha lista)
 let minhaLista = [1, 5, 3, 7, 0,]//Lista de livros do usuario(por estar definida aqui reseta quando o usuario voltar ao index)
 let livros = []//Vetor com os livros
 livros[0] = ['Neve vidro e maçãs', 2019, 4.2, 1500, 'Contos - Ficção', '', '"imagens/neve vidro e maçãs - 2019.png"']
