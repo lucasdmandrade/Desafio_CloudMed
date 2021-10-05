@@ -67,29 +67,11 @@ function listagemLivros(state, livros) {
             </div>
             `}
         } divPronta += `</div>
-    <div class="listalivros2">
     `
-        //Logica da paginação 
-        //Na pagina ficaram os livros de 12 em 12, porem divididos em 2 fileiras
-        for (var i = ((state - 1) * 12) + 6; i < ((state) * 12); i++) {
-            console.log(livros[i])
-            //Só cria a div para o livro caso exista informação pra ser inserida(Se tem mais livros)
-            if (livros[i] != null) {
-                //href para inserir id da imagem q quero aumentar na url 
-                divPronta += `
-        <div class="livro livroTransition">
-            <a id=${i} href="#${i}" onClick="selecaoLivro(this.id, livros)">
-                <img src=${livros[i][6]} /> 
-            </a>
-            <h3>${livros[i][0]}</h3>
-            <p>${livros[i][1]}</p>
-        </div>
-        `}
-        }
 
-        //Inserindo div fechamento e botãos voltar pagina 
-        divPronta += `</div>
-    <div class="listagemLivros">
+        //Inserindo botões voltar pagina 
+        divPronta += `
+                <div class="listagemLivros">
                     <button id="${state}" onclick="antPagina(this.id)">
                         <img src="icones/chevron-left.svg" alt="Voltar lista">
                     </button>
