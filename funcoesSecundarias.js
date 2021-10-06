@@ -209,3 +209,7 @@ function inserirModalFooter(state) {
 
     modalFooter.innerHTML = divModalFooter
 }
+
+function contPagesMyList(minhaLista, stateModal){
+    totalPagesModal = minhaLista / 5
+}
